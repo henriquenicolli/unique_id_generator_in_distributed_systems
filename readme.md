@@ -9,7 +9,7 @@
 
 Uses databases auto_increment feature. This approach uses the databases auto_increment feature. Instead of increasing the next ID by 1, we increase it by K, where K is the number of database servers in use. As illustrated in the figure above, the next ID to be generated is equal to the previous ID in the same server plus 2. This solves some scalability issues because IDs can scale with the number of database servers.
 
-![Multi-master replication](%2020250125145601.png)
+![Multi-master replication](2020250125145601.png)
 
 However, this strategy has some major drawbacks:
 - Hard to scale with multiple data centers
@@ -20,7 +20,7 @@ However, this strategy has some major drawbacks:
 
 A UUID is another easy way to obtain unique IDs. UUID is a 128-bit number used to identify information in computer systems.
 
-![UUID](%2020250125150435.png)
+![UUID](2020250125150435.png)
 
 In this design, each web server contains an ID generator, and a web server is responsible for generating IDs independently.
 
@@ -32,7 +32,7 @@ In this design, each web server contains an ID generator, and a web server is re
 
 The idea is to use a centralized auto_increment feature in a single database server (Ticket Server).
 
-![Ticket Server](%2020250125150840.png)
+![Ticket Server](2020250125150840.png)
 
 **Pros:**
 - Numeric IDs
@@ -43,7 +43,7 @@ The idea is to use a centralized auto_increment feature in a single database ser
 
 ## 4. Twitter snowflake ID
 
-![Twitter snowflake ID](%2020250125151613.png)
+![Twitter snowflake ID](2020250125151613.png)
 
 **ID Sections:**
 - Sign bit: 1 bit. It will always be 0. This is reserved for future uses. It can potentially be used to distinguish between signed and unsigned numbers.
